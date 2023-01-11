@@ -1,6 +1,5 @@
 package com.demoDatajpa_Mapping_.Hibernate.demoDatajpa_Mapping_.Hibernate.config;
 
-
 import com.demoDatajpa_Mapping_.Hibernate.demoDatajpa_Mapping_.Hibernate.model.User;
 import org.springframework.batch.item.ItemProcessor;
 
@@ -15,6 +14,7 @@ public class UserItemProcessor implements ItemProcessor<User, User>{
     // Takes the return type of Model Class
     // Takes input as object of the Model Class and returns the same
     public User process(User user) throws Exception{
+        System.out.println("User message : Processing..... " + user);
         return user;
     }
 }

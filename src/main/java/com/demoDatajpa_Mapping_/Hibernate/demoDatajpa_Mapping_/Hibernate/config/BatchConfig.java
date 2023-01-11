@@ -32,17 +32,19 @@ public class BatchConfig {
     // Not made by us, but provided by Spring Batch
     @Autowired
     private DataSource dataSource;  // In application.prop file it has the login credentials for the DB
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;    // Object for building JOB
+
     @Autowired
     private StepBuilderFactory stepBuilderFactory;  // Object for building step
+    @Autowired
+    private JobBuilderFactory jobBuilderFactory;    // Object for building JOB
+
 
     @Bean
     // Reader
     // we will make a Bean of FlatFileItemReader class's method
     public FlatFileItemReader<User> reader(){
         // to use this class methods
-        // we will create its object and in generice we will provide the model class as its datatype
+        // we will create its object and in generics we will provide the model class as its datatype
         FlatFileItemReader<User> reader = new FlatFileItemReader<>();
         // to get the target file from the resources location.
         // we will use setResource method oF FlatFileItemReader Class.
